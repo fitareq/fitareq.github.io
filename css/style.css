@@ -706,7 +706,7 @@ a {
     content: '';
     position: absolute;
     width: 2px;
-    background: var(--primary-color);
+    background: #2563eb;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -730,7 +730,7 @@ a {
 
 .timeline-content {
     padding: 1.5rem;
-    background: var(--container-color);
+    background: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -741,7 +741,7 @@ a {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: var(--primary-color);
+    background: #2563eb;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -756,25 +756,25 @@ a {
 }
 
 .timeline-date {
-    color: var(--text-color-light);
+    color: #666;
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
 }
 
 .timeline-title {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
 .timeline-subtitle {
-    color: var(--primary-color);
+    color: #2563eb;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
 .timeline-description {
-    color: var(--text-color);
+    color: #444;
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -794,7 +794,7 @@ a {
 
 .timeline-list li::before {
     content: '•';
-    color: var(--primary-color);
+    color: #2563eb;
     position: absolute;
     left: 0;
 }
@@ -808,7 +808,7 @@ a {
 }
 
 .certification-card {
-    background: var(--container-color);
+    background: #fff;
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -821,18 +821,18 @@ a {
 
 .certification-title {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
 .certification-issuer {
-    color: var(--primary-color);
+    color: #2563eb;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .certification-date {
-    color: var(--text-color-light);
+    color: #666;
     font-size: 0.875rem;
     margin-bottom: 1rem;
 }
@@ -841,7 +841,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: #2563eb;
     font-size: 0.9rem;
     text-decoration: none;
     transition: gap 0.3s;
