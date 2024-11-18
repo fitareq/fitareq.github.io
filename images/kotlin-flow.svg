@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="400" height="225" fill="#F8FAFC"/>
+    
+    <!-- Flow Stream -->
+    <path d="M50 112.5 C100 112.5 100 62.5 150 62.5 C200 62.5 200 162.5 250 162.5 C300 162.5 300 62.5 350 62.5" 
+          stroke="#2563eb" stroke-width="4" fill="none"/>
+    
+    <!-- Flow Elements -->
+    <circle cx="150" cy="62.5" r="20" fill="#2563eb" opacity="0.9"/>
+    <text x="150" y="67.5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">map</text>
+    
+    <circle cx="250" cy="162.5" r="20" fill="#2563eb" opacity="0.7"/>
+    <text x="250" y="167.5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">filter</text>
+    
+    <circle cx="350" cy="62.5" r="20" fill="#2563eb" opacity="0.5"/>
+    <text x="350" y="67.5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">collect</text>
+    
+    <!-- Flow Particles -->
+    <circle cx="100" cy="112.5" r="5" fill="#2563eb">
+        <animate attributeName="cx" from="50" to="350" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="112.5;62.5;162.5;62.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+</svg>
