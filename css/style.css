@@ -289,6 +289,23 @@ a {
     color: var(--light-text);
 }
 
+/* Profile Image */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
 /* Skills */
 .skills-content {
     padding: 1.5rem;
@@ -355,13 +372,13 @@ a {
 
 .skill-header i {
     font-size: 1.5rem;
-    color: var(--first-color);
+    color: var(--primary-color);
 }
 
 .skill-header h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--title-color);
+    color: var(--text-color);
 }
 
 .skill-list {
@@ -392,7 +409,7 @@ a {
 
 .skill-percentage {
     height: 100%;
-    background: var(--first-color);
+    background: var(--primary-color);
     border-radius: 4px;
     position: relative;
     transition: width 1s ease-in-out;
@@ -402,7 +419,7 @@ a {
     position: absolute;
     right: 0;
     top: -25px;
-    background: var(--first-color);
+    background: var(--primary-color);
     color: #fff;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
@@ -420,7 +437,7 @@ a {
     transform: translateX(-50%);
     border-width: 4px 4px 0 4px;
     border-style: solid;
-    border-color: var(--first-color) transparent transparent transparent;
+    border-color: var(--primary-color) transparent transparent transparent;
 }
 
 .skill-item:hover .tooltip {
@@ -560,8 +577,8 @@ a {
 
 .blog-tag {
     display: inline-block;
-    background: var(--first-color-lighter);
-    color: var(--first-color);
+    background: var(--primary-color-lighter);
+    color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 0.5rem;
     font-size: 0.875rem;
@@ -571,7 +588,7 @@ a {
 
 .blog-title {
     font-size: 1.25rem;
-    color: var(--title-color);
+    color: var(--text-color);
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -596,7 +613,7 @@ a {
 }
 
 .blog-link {
-    color: var(--first-color);
+    color: var(--primary-color);
     font-weight: 500;
     display: flex;
     align-items: center;
