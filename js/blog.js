@@ -12,13 +12,19 @@ async function fetchMediumPosts() {
             blogGrid.innerHTML = ''; // Clear existing posts
             
             posts.forEach(post => {
-                // Extract the first image from the post content
-                const image = extractImageFromContent(post.content) || post.thumbnail;
+                // Get the first image from the content
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = post.content;
+                const firstImg = tempDiv.querySelector('img');
+                const imageUrl = firstImg ? firstImg.src : (post.thumbnail || 'images/blog-placeholder.svg');
+                
+                // Clean up the image URL to use HTTPS
+                const secureImageUrl = imageUrl.replace(/^http:\/\//i, 'https://');
                 
                 const articleHtml = `
                     <article class="blog-card">
                         <div class="blog-image">
-                            <img src="${image || 'images/blog-placeholder.svg'}" alt="${post.title}" class="blog-img">
+                            <img src="${secureImageUrl}" alt="${post.title}" class="blog-img" onerror="this.src='images/blog-placeholder.svg'">
                         </div>
                         <div class="blog-data">
                             <span class="blog-tag">${getPostTag(post.categories)}</span>
@@ -40,13 +46,6 @@ async function fetchMediumPosts() {
         console.error('Error fetching Medium posts:', error);
         displayFallbackPosts();
     }
-}
-
-function extractImageFromContent(content) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(content, 'text/html');
-    const firstImage = doc.querySelector('img');
-    return firstImage ? firstImage.src : null;
 }
 
 function getPostTag(categories) {
@@ -75,7 +74,7 @@ function displayFallbackPosts() {
     blogGrid.innerHTML = `
         <article class="blog-card">
             <div class="blog-image">
-                <img src="images/mvvm-pattern.svg" alt="MVVM Architecture Pattern" class="blog-img">
+                <img src="images/blog-placeholder.svg" alt="MVVM Architecture Pattern" class="blog-img">
             </div>
             <div class="blog-data">
                 <span class="blog-tag">Architecture</span>

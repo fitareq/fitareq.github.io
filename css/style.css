@@ -113,17 +113,16 @@ a {
 
 /* Home */
 .home {
-    padding: 8rem 0 4rem;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    padding-top: 5rem;
 }
 
 .home-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .home-text {
@@ -142,6 +141,7 @@ a {
     font-size: var(--biggest-font-size);
     font-weight: 700;
     color: var(--title-color);
+    line-height: 1.2;
     margin-bottom: 0.5rem;
 }
 
@@ -157,6 +157,7 @@ a {
     color: var(--text-color-light);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    max-width: 500px;
 }
 
 .home-buttons {
@@ -167,12 +168,14 @@ a {
 .home-image {
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .home-blob {
-    width: 300px;
-    height: 300px;
-    background: var(--container-color);
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, var(--container-color) 0%, rgba(37, 99, 235, 0.1) 100%);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -185,11 +188,11 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.4s ease;
 }
 
 .home-blob:hover .home-img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .button {
@@ -253,9 +256,19 @@ a {
 
 /* Responsive */
 @media screen and (max-width: 968px) {
+    .home {
+        padding-top: 2rem;
+    }
+
     .home-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 3rem;
+    }
+
+    .home-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .home-buttons {
@@ -267,19 +280,24 @@ a {
     }
 
     .home-blob {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
 }
 
 @media screen and (max-width: 576px) {
     .home-buttons {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .home-blob {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
+    }
+
+    .home-title {
+        font-size: var(--h1-font-size);
     }
 }
 
