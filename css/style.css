@@ -94,6 +94,11 @@ a {
     color: var(--primary-color);
 }
 
+.nav-toggle,
+.nav-close {
+    display: none;
+}
+
 /* Sections */
 .section {
     padding: var(--section-padding);
