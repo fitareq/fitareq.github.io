@@ -12,10 +12,13 @@ async function fetchMediumPosts() {
             blogGrid.innerHTML = ''; // Clear existing posts
             
             posts.forEach(post => {
+                // Extract the first image from the post content
+                const image = extractImageFromContent(post.content) || post.thumbnail;
+                
                 const articleHtml = `
                     <article class="blog-card">
                         <div class="blog-image">
-                            <img src="${post.thumbnail || 'images/blog-placeholder.svg'}" alt="${post.title}" class="blog-img">
+                            <img src="${image || 'images/blog-placeholder.svg'}" alt="${post.title}" class="blog-img">
                         </div>
                         <div class="blog-data">
                             <span class="blog-tag">${getPostTag(post.categories)}</span>
@@ -37,6 +40,13 @@ async function fetchMediumPosts() {
         console.error('Error fetching Medium posts:', error);
         displayFallbackPosts();
     }
+}
+
+function extractImageFromContent(content) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(content, 'text/html');
+    const firstImage = doc.querySelector('img');
+    return firstImage ? firstImage.src : null;
 }
 
 function getPostTag(categories) {
