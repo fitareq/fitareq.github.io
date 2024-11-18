@@ -389,60 +389,14 @@ a {
 
 .skill-item {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 1rem;
 }
 
-.skill-name {
-    font-size: 0.9rem;
+.skill-title {
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-color);
-}
-
-.skill-bar {
-    height: 8px;
-    background: var(--container-color-light);
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-percentage {
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: 4px;
-    position: relative;
-    transition: width 1s ease-in-out;
-}
-
-.skill-percentage .tooltip {
-    position: absolute;
-    right: 0;
-    top: -25px;
-    background: var(--primary-color);
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 0.3s;
-}
-
-.skill-percentage .tooltip::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 4px 4px 0 4px;
-    border-style: solid;
-    border-color: var(--primary-color) transparent transparent transparent;
-}
-
-.skill-item:hover .tooltip {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 @media screen and (max-width: 968px) {
