@@ -24,20 +24,20 @@ navLinks.forEach(link => {
 })
 
 // Active link on scroll
-const sections = document.querySelectorAll('section[id]')
-
 function scrollActive() {
+    const sections = document.querySelectorAll('section[id]')
     const scrollY = window.pageYOffset
 
     sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id')
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 58
+        const sectionId = current.getAttribute('id')
+        const navLink = document.querySelector('.nav-link[href*=' + sectionId + ']')
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav-link[href*=' + sectionId + ']').classList.add('active')
+            navLink?.classList.add('active')
         } else {
-            document.querySelector('.nav-link[href*=' + sectionId + ']').classList.remove('active')
+            navLink?.classList.remove('active')
         }
     })
 }
@@ -47,7 +47,7 @@ window.addEventListener('scroll', scrollActive)
 // Change header background on scroll
 function scrollHeader() {
     const header = document.querySelector('.header')
-    if (this.scrollY >= 50) {
+    if (window.scrollY >= 50) {
         header.classList.add('scroll-header')
     } else {
         header.classList.remove('scroll-header')
@@ -55,3 +55,21 @@ function scrollHeader() {
 }
 
 window.addEventListener('scroll', scrollHeader)
+
+// Add click event to nav links
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault()
+        const targetId = link.getAttribute('href').substring(1)
+        const targetSection = document.getElementById(targetId)
+        
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'))
+        
+        // Add active class to clicked link
+        link.classList.add('active')
+        
+        // Smooth scroll to section
+        targetSection.scrollIntoView({ behavior: 'smooth' })
+    })
+})
